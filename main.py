@@ -11,7 +11,7 @@ st.title('좌표평면 그래프 :sparkles:')
 st.header('헤더는 섹션의 제목 :sparkles:')
 
 #Subheader 적용
-st.subheader('subheader는  섹션의 부제목')
+st.subheader('좌표평면은 순서쌍의 부제목')
 
 
 
