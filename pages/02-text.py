@@ -16,7 +16,7 @@ st.subheader('subheader는  섹션의 부제목')
 
 
 #캡션 적용
-st.caption('캡션은 짧은 설명을 추가하는 것! '')
+st.caption('캡션은 짧은 설명을 추가하는 것!')
 
 #코드 표시
 sample_code='''
