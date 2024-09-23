@@ -22,7 +22,7 @@ st.caption('캡션은 짧은 설명을 추가하는 것!')
 sample_code='''
 def function():
    print('hello,  world')
-...
+'''
 st.code(sample_code, language="python")
 
 # 일반 테스트
