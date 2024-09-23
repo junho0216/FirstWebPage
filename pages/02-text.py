@@ -1,4 +1,4 @@
-import streamlit as at
+import streamlit as st
  
 # 타이틀 적용 예시
 st.title('타이틀은 페이지 제목')
