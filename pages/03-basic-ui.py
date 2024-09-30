@@ -61,7 +61,10 @@ title = st.text_input(
 )
 st.write(f'당신이 선택한  야행지: :violet[{title}]')
 #슬라이더
+
 values = st.slider(
-     '범위의 값을 다음과 같이 지정할 수 있어요:sparkles:', #질문
-     0.0, 100,0, (25.0, 75.0))                            #최소값,최대값,초기값
-st.write('선택 범위:', values)
+    '범위의 값을 다음과 같이 지정할 수 있어요:sparkles:',  # 질문
+    min_value=0.0,  # 최소값
+    max_value=100,  # 최대값
+    value=(25.0, 75.0)  # 초기값 (튜플)
+)
