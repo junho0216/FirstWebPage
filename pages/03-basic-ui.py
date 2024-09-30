@@ -28,3 +28,5 @@ st.download_button(
      data=dataframe.to_CSV(),      #dataframe을 csv 형태로 변환
      file_name='sample.csv',
      mime='text/csv'               #데이터 유형
+)
+
