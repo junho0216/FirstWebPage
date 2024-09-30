@@ -54,3 +54,14 @@ elif mbti == 'ENFP':
      st.write('당신은 :green[활동가] 이시네요')
 else:
      st.write('당신에 대해 :red[알고 싶어요]:grey_exclamation:')
+#텍스트 입력
+title = st.text_input(
+     label='가고 싶은 여행지가 있나요?',
+     placeholder='여행지를 입력해 주세요'
+)
+st.write(f'당신이 선택한  야행지: :violet[{title}]')
+#슬라이더
+values = st.slider(
+     '범위의 값을 다음과 같이 지정할 수 있어요:sparkles:', #질문
+     0.0, 100,0, (25.0, 75.0))                            #최소값,최대값,초기값
+st.write('선택 범위:', values)
