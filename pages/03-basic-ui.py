@@ -16,7 +16,7 @@ if button:
 
 #파일 다운로드  버튼
 #샘플 데이터 생성
-#dataframe =  pd.DataFrame({
+dataframe =  pd.DataFrame({
      'first column':['Kor','eng','math','science'],
      'sound colum':[10, 20, 30, 40]
 })
