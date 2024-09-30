@@ -53,4 +53,4 @@ if mbti == 'ISTJ':
 elif mbti == 'ENFP':
      st.write('당신은 :green[활동가] 이시네요')
 else:
-     st.write('당신에 대해 :red[알고 싶어요]:grey_exclamation:")
+     st.write('당신에 대해 :red[알고 싶어요]:grey_exclamation:')
