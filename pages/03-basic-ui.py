@@ -66,6 +66,6 @@ st.write(f'당신이 선택한  야행지: :violet[{title}]')
 values = st.slider(
     '범위의 값을 다음과 같이 지정할 수 있어요 :sparkles: ',  # 질문
     min_value=0.0,  # 최소값
-    max_value=100,  # 최대값
+    max_value=100.0,  # 최대값
     value=(25.0, 75.0)  # 초기값 (튜플)
 )
