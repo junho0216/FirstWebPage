@@ -25,7 +25,7 @@ dataframe =  pd.DataFrame({
 #다운로드 버튼 연결
 st.download_button(
      label='CSV로 성적표 다운로드',
-     data=dataframe.to_CSV(),      #dataframe을 csv 형태로 변환
+     data=dataframe.to_csv(),      #dataframe을 csv 형태로 변환
      file_name='sample.csv',
      mime='text/csv'               #데이터 유형
 )
