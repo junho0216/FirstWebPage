@@ -13,12 +13,10 @@ def generate_lotto():
 
     while len(lotto)<6:
         number=random.randint(1, 46)
-      lotto.add(number)
-
-
-lotto = list(lotto)
-lotto.sort()
-return lotto
+        lotto.add(number)
+        lotto = list(lotto)
+        lotto.sort()
+        return lotto
 
 
 button=st.button('로또를 생성해 주세요!')
