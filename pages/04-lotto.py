@@ -1,21 +1,29 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 
 # Streamlit 앱 제목
 st.title('KBO 팀 우승 확률 예측기')
 
-# KBO 팀 데이터 (예시 데이터)
+# KBO 팀명 리스트
+teams = [
+    '두산 베어스', 'LG 트윈스', '롯데 자이언츠', 
+    '키움 히어로즈', 'KIA 타이거즈', '삼성 라이온즈', 
+    'SSG 랜더스', '한화 이글스', 'NC 다이노스'
+]
+
+# 랜덤 데이터 생성
+num_teams = len(teams)
+np.random.seed()  # 시드를 설정하여 매번 다른 랜덤 값 생성
+
+# 랜덤 성적 데이터 생성
 data = {
-    '팀': [
-        '두산 베어스', 'LG 트윈스', '롯데 자이언츠', 
-        '키움 히어로즈', 'KIA 타이거즈', '삼성 라이온즈', 
-        'SSG 랜더스', '한화 이글스', 'NC 다이노스'
-    ],
-    '승률': [0.600, 0.550, 0.500, 0.520, 0.480, 0.530, 0.600, 0.450, 0.490],
-    '득점': [600, 550, 500, 520, 480, 510, 600, 450, 490],
-    '실점': [500, 520, 550, 510, 540, 500, 480, 580, 500],
-    '홈런': [150, 120, 100, 130, 90, 110, 160, 80, 95],
-    'ERA': [3.50, 4.00, 4.50, 3.80, 4.10, 3.70, 3.40, 5.00, 4.20]
+    '팀': teams,
+    '승률': np.round(np.random.uniform(0.400, 0.700, num_teams), 3),
+    '득점': np.random.randint(400, 800, num_teams),
+    '실점': np.random.randint(400, 800, num_teams),
+    '홈런': np.random.randint(70, 200, num_teams),
+    'ERA': np.round(np.random.uniform(3.00, 5.50, num_teams), 2)
 }
 
 # 데이터프레임 생성
@@ -40,6 +48,7 @@ st.write(df[['팀', '우승 확률']])
 
 # 우승 확률 시각화
 st.bar_chart(df.set_index('팀')['우승 확률'])
+
 
 
 
