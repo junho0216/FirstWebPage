@@ -34,10 +34,12 @@ df['런 디퍼런스'] = df['득점'] - df['실점']
 
 # 우승 확률 계산 함수
 def calculate_championship_probability(row):
-    return (row['승률'] * 0.4 + 
-            (row['런 디퍼런스'] / max(df['런 디퍼런스'])) * 0.3 + 
-            (row['홈런'] / max(df['홈런'])) * 0.2 - 
-            (row['ERA'] / max(df['ERA'])) * 0.1)
+    raw_probability = (row['승률'] * 0.4 + 
+                       (row['런 디퍼런스'] / max(df['런 디퍼런스'])) * 0.3 + 
+                       (row['홈런'] / max(df['홈런'])) * 0.2 - 
+                       (row['ERA'] / max(df['ERA'])) * 0.1)
+    # 0과 1 사이로 정규화
+    return max(0, min(1, raw_probability))
 
 # 우승 확률 계산
 df['우승 확률'] = df.apply(calculate_championship_probability, axis=1)
@@ -48,7 +50,3 @@ st.write(df[['팀', '우승 확률']])
 
 # 우승 확률 시각화
 st.bar_chart(df.set_index('팀')['우승 확률'])
-
-
-
-
